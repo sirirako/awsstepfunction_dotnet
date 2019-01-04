@@ -1,0 +1,51 @@
+{
+    "version": "0",
+    "id": "2ce2af25-4de1-089d-227f-c7382cd27466",
+    "detail-type": "AWS API Call via CloudTrail",
+    "source": "aws.s3",
+    "account": "573575823092",
+    "time": "2018-12-31T09:45:35Z",
+    "region": "us-east-1",
+    "resources": [],
+    "detail": {
+      "eventVersion": "1.05",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDAJEGRS6A6MSYAJCGIW",
+        "arn": "arn:aws:iam::573575823092:user/user1",
+        "accountId": "573575823092",
+        "accessKeyId": "AKIAJT5L42VJG277R4WQ",
+        "userName": "user1"
+      },
+      "eventTime": "2018-12-31T09:45:35Z",
+      "eventSource": "s3.amazonaws.com",
+      "eventName": "PutObject",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "49.49.12.15",
+      "userAgent": "[aws-cli/1.14.47 Python/2.7.14 Darwin/17.7.0 botocore/1.9.0]",
+      "requestParameters": {
+        "bucketName": "siri-sandbox-bucket-1-us-east-1",
+        "key": "IMG_6071.JPG"
+      },
+      "responseElements": null,
+      "additionalEventData": {
+        "x-amz-id-2": "F3k9GG4x0Qj3oazvwXeZjI+gEmRLmBqkZcZm7gS4YuSUfEgtvGr/0QnQz6K32JqWKu1fI5yH0N0="
+      },
+      "requestID": "67A176A5E788C8B1",
+      "eventID": "98de5915-9698-4d6a-bf3d-c529f8a882a3",
+      "readOnly": false,
+      "resources": [
+        {
+          "type": "AWS::S3::Object",
+          "ARN": "arn:aws:s3:::siri-sandbox-bucket-1-us-east-1/IMG_6071.JPG"
+        },
+        {
+          "accountId": "573575823092",
+          "type": "AWS::S3::Bucket",
+          "ARN": "arn:aws:s3:::siri-sandbox-bucket-1-us-east-1"
+        }
+      ],
+      "eventType": "AwsApiCall",
+      "recipientAccountId": "573575823092"
+    }
+  }
