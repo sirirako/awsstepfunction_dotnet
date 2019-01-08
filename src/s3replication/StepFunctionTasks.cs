@@ -21,7 +21,9 @@ namespace s3replication
 {
     public class StepFunctionTasks
     {
-        public AmazonS3Client S3Client { get; set; }
+        IAmazonS3 S3Client { get; set; }
+        
+        //public AmazonS3Client S3Client { get; set; }
         
         string stxsd {get; set;}
 
@@ -33,6 +35,7 @@ namespace s3replication
         public StepFunctionTasks()
         {
             S3Client = new AmazonS3Client();
+            
             //var bucketName = System.Environment.GetEnvironmentVariable(BUCKET_NAME);
             //var schemaName = System.Environment.GetEnvironmentVariable(SCHEMA_FILENAME);
             string bucketName = "siri-lambda-test";
@@ -44,6 +47,17 @@ namespace s3replication
             System.IO.File.WriteAllText("/tmp/books.xsd", stxsd);
         }
 
+        public StepFunctionTasks(IAmazonS3 s3Client)
+        {
+            this.S3Client = s3Client;
+            string bucketName = "siri-lambda-test";
+            string schemaName = "books.xsd";
+            
+
+            stxsd = GetObject(bucketName,schemaName).Result;
+            //stxsd = GetObject("siri-lambda-test","books.xsd").Result;
+            System.IO.File.WriteAllText("/tmp/books.xsd", stxsd);            
+        }
 
         public State Greeting(CWEvent cwevent, ILambdaContext context)
         {
