@@ -6,10 +6,10 @@
   "Resources" : {
 
 
-    "GreetingTask" : {
+    "XMLValidateTask" : {
         "Type" : "AWS::Lambda::Function",
         "Properties" : {
-            "Handler" : "s3replication::s3replication.StepFunctionTasks::Greeting",
+            "Handler" : "s3replication::s3replication.StepFunctionTasks::XMLValidate",
             "Role"    : {"Fn::GetAtt" : [ "LambdaRole", "Arn"]},
             "Runtime" : "dotnetcore2.1",
             "MemorySize" : 256,
@@ -21,10 +21,10 @@
         }
     },
 
-    "SalutationsTask" : {
+    "ReplicationTask" : {
         "Type" : "AWS::Lambda::Function",
         "Properties" : {
-            "Handler" : "s3replication::s3replication.StepFunctionTasks::Salutations",            
+            "Handler" : "s3replication::s3replication.StepFunctionTasks::ReplicateObject",            
             "Role"    : {"Fn::GetAtt" : [ "LambdaRole", "Arn"]},
             "Runtime" : "dotnetcore2.1",
             "MemorySize" : 256,

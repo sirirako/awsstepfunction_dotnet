@@ -53,7 +53,7 @@ namespace s3replication.Tests
                 
             };
 
-            state = functions.Greeting(cwevent, context);
+            state = functions.XMLValidate(cwevent, context);
 
             Assert.Equal(5, state.WaitInSeconds);
             Assert.Equal(false, state.XMLValid);

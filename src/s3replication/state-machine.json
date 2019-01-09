@@ -1,20 +1,20 @@
 ﻿{
   "Comment": "State Machine",
-  "StartAt": "Greeting",
+  "StartAt": "XMLValidation",
   "States": {
-    "Greeting": {
+    "XMLValidation": {
       "Type": "Task",
-      "Resource": "${GreetingTask.Arn}",
+      "Resource": "${XMLValidateTask.Arn}",
       "Next": "WaitToActivate"
     },
     "WaitToActivate": {
       "Type": "Wait",
       "SecondsPath": "$.WaitInSeconds",
-      "Next": "Salutations"
+      "Next": "Replication"
     },
-    "Salutations": {
+    "Replication": {
       "Type": "Task",
-      "Resource": "${SalutationsTask.Arn}",
+      "Resource": "${ReplicationTask.Arn}",
       "End": true
     }
   }

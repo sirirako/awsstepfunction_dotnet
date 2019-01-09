@@ -59,7 +59,7 @@ namespace s3replication
             System.IO.File.WriteAllText("/tmp/books.xsd", stxsd);            
         }
 
-        public State Greeting(CWEvent cwevent, ILambdaContext context)
+        public State XMLValidate(CWEvent cwevent, ILambdaContext context)
         {
             State state = new State();
 
@@ -109,7 +109,7 @@ namespace s3replication
             return state;
         }
 
-        public State Salutations(State state, ILambdaContext context)
+        public State ReplicateObject(State state, ILambdaContext context)
         {
             state.Message += ", Goodbye";
 

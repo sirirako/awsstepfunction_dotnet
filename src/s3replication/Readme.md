@@ -63,3 +63,5 @@ Deploy application
 dotnet lambda deploy-serverless --stack-name s3replication --s3-bucket siri-sandbox-build --profile sandboxuser1 --region us-east-1 --template serverless.template --environment Variables={BUCKET_NAME=siri-lambda-test,SCHEMA_FILENAME=books.xsd}
 
 dotnet add package AWSSDK.S3
+
+dotnet lambda deploy-serverless --stack-name s3replication --s3-bucket siri-sandbox-build --region us-east-1 --template serverless.template 
